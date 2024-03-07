@@ -17,10 +17,12 @@
     const [email,setEmail] =useState();
     const [password, setPassword] =useState();
     const [date, setDate] = useState();
-
+    
+    axios.defaults.withCredentials = true;   //for vercel deploy
+    
     const handleSubmit = (e) =>{
         e.preventDefault();
-        axios.post('http://localhost:3000/register',{name,email,password,date})
+        axios.post('https://deploy-mern-api-umber.vercel.app/register',{name,email,password,date})
         .then(result => {
             Swal.fire({
                 position: "center",
