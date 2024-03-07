@@ -6,9 +6,15 @@ const RegisterModel = require("./models/RegiterDetails");
 
 const app = express();
 app.use(express.json());
-app.use(cors());
+app.use(cors(
+  {
+    origin:["https://deploy-mern-1whq.vercel.app"],
+    methods:["POST","GET"],
+    credentials:true
+  }
+));
 
-mongoose.connect("mongodb://localhost:27017/Elansol");
+mongoose.connect("mongodb+srv://kbarath33083:Root@cluster0.eiofiqu.mongodb.net/Elansol?retryWrites=true&w=majority");
 
 
 app.post("/register", async (req, res) => {
