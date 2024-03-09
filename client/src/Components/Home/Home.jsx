@@ -8,7 +8,7 @@ const Home = () => {
   const [users, setUsers] = useState([]);
 
   useEffect(() => {
-    axios.get('https://deploy-mern-api-umber.vercel.app/getusers')
+    axios.get('http://localhost:3000/getusers')
       .then(response => setUsers(response.data))  
       .catch(err => console.log(err))
   }, [])

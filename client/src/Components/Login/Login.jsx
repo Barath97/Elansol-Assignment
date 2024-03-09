@@ -13,11 +13,9 @@ import { useNavigate } from 'react-router-dom';
   const [email,setEmail] = useState();
   const [password,setPassword] = useState();
 
-  axios.defaults.withCredentials = true;   //for vercel deploy
-  
   const handleSubmit = (e) => {
     e.preventDefault();
-    axios.post('https://deploy-mern-api-umber.vercel.app/login', { email, password })
+    axios.post('http://localhost:3000/login', { email, password })
       .then(result => {
         console.log(result.data);
         if (result.data === "Success") {
