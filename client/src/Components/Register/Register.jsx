@@ -17,7 +17,8 @@
     const [email,setEmail] =useState();
     const [password, setPassword] =useState();
     const [date, setDate] = useState();
-
+    
+    
     const handleSubmit = (e) =>{
         e.preventDefault();
         axios.post('http://localhost:3000/register',{name,email,password,date})
